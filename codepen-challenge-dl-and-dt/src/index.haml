@@ -1,0 +1,33 @@
+- menu = []
+
+- menu << {title: 'BREAKFAST', time: '08:00', elements: [{title: "PROTEIN", items: [['Meat\Fish\Cheese\Yogurt', '150 gr']] }, {title: "FATS", items: [['Cheese or Nuts ', '40-30 gr'],  ['Red fish or Avocado', '70-50 gr'],  ['Butter\Olive oil\Peanut butter ', '1-1.5 tbs']] }, {title: "CARBS", items: [['Buckwheat\Rice\Oatmeal\Pasta', '40 gr']] }]}
+
+- menu << {title: 'SNACK 1', time: '11:00', elements: [{title: "PROTEIN", items: [['Meat\Fish\Cheese\Yogurt', '150 gr']] }, {title: "CARBOHYDRATES", items: [['Fruit', '100 gr']] }]}
+
+- menu << {title: 'Lunch', time: '14:00', elements: [{title: "PROTEIN", items: [['Meat\Fish\Cheese\Yogurt', '150 gr']] }, {title: "FATS", items: [['Cheese or Nuts ', '40-30 gr'],  ['Red fish or Avocado', '70-50 gr'],  ['Butter\Olive oil\Peanut butter ', '1-1.5 tbs']] }, {title: "CARBS", items: [['Buckwheat\Rice\Oatmeal\Pasta', '30 gr']] }]}
+
+- menu << {title: 'SNACK 2', time: '17:00', elements: [{title: "PROTEIN", items: [['Meat\Fish\Cheese\Yogurt', '150 gr']] }, {title: "CARBS", items: [['Fruit', '100 gr']] }]}
+
+- menu << {title: 'Dinner', time: '20:00', elements: [{title: "PROTEIN", items: [['Meat\Fish\Cheese\Yogurt', '100 gr']] }]}
+
+%h1 
+  Meal Plan
+  
+.container
+  - menu.each do |item|
+    .col
+      .carrot
+      %time
+        = item[:time]
+      %h2
+        = item[:title]
+      
+      - item[:elements].each do |element|
+        %dl
+          %dt= element[:title]
+          -element[:items].each do |item|
+            %dd
+              %span
+                =item[0]
+              %span
+                =item[1]

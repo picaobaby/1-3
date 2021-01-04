@@ -1,0 +1,295 @@
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  margin: 0;
+  background: linear-gradient(#E6E6E6, #bbbbbb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a:link {
+  text-decoration: none;
+  color: #1161ed;
+}
+
+#outer {
+  width: 1000px;
+  height: 800px;
+  background-image: url('https://chenyiya.com/codepen/day008-bk.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 10px 0px #939393;
+}
+
+
+/*left button*/
+
+#left-btn {
+  width: 80px;
+  height: 640px;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+#left-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#left-btn:hover i {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+#left-btn i {
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+
+/*right button*/
+
+#right-btn {
+  width: 80px;
+  height: 640px;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+#right-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#right-btn:hover i {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+#right-btn i {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+#right-btn i.active {
+  color: #BFF372;
+}
+
+
+/*content-box*/
+
+#inner {
+  width: 780px;
+  height: 640px;
+  background-image: url('https://chenyiya.com/codepen/day008-content.jpg');
+  box-shadow: 0px 30px 80px -30px #000;
+  position: relative;
+}
+
+#left-box {
+  padding-left: 40px;
+  position: absolute;
+  bottom: 70px;
+}
+
+#left-box h5 {
+  color: rgba(138, 138, 138, 0.9);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-left: 5px;
+  line-height: 12px;
+}
+
+#left-box h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(40, 32, 32, 0.9);
+  font-size: 3.8rem;
+  line-height: 60px;
+  letter-spacing: 1px;
+  mix-blend-mode: luminosity;
+}
+
+#right-box {
+  width: 370px;
+  padding-right: 20px;
+  position: absolute;
+  bottom: 65px;
+  right: 0;
+}
+
+.two-box {
+  display: inline-block;
+  margin-bottom: 60px;
+  margin-left: 40px;
+}
+
+.two-box h3 {
+  color: #72CBE1;
+  font-weight: 100;
+  line-height: 14px;
+}
+
+.two-box h1 {
+  color: #28202A;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.8rem;
+  letter-spacing: -3px;
+  line-height: 65px;
+  float: left;
+}
+
+.two-box img {
+  float: left;
+  margin: 12px 0 0 15px;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  width: 350px;
+  height: 90px;
+  margin: 15px 0;
+  position: relative;
+  top: 0px;
+  left: 0;
+  cursor: pointer;
+}
+
+.btn h2 {
+  width: 350px;
+  height: 90px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  line-height: 90px;
+  background: rgba(215, 215, 215, 0.9);
+  transition: all 0.8s;
+}
+
+h2.black {
+  color: #000;
+  background: rgba(191, 243, 114, 0.8);
+}
+
+.checkmark {
+  width: 40px;
+  height: 40px;
+  background: white;
+  position: relative;
+  top: 25px;
+  left: -20px;
+  z-index: 120;
+  display: none;
+  box-shadow: 0px 0px 20px -12px #000;
+}
+
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  33.3333% {
+    width: 8px;
+    height: 0;
+  }
+}
+
+.checkmark::after {
+  -webkit-animation: check .5s;
+  -moz-animation: check .5s;
+  -o-animation: check .5s;
+  animation: check .5s;
+}
+
+.checkmark:after {
+  -moz-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(135deg);
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-right: 3px solid #BFF372;
+  border-top: 3px solid #BFF372;
+  content: '';
+  display: block;
+  width: 8px;
+  height: 16px;
+  position: absolute;
+  top: 20px;
+  left: 9px;
+}
+
+.beginner {
+  background-image: url("https://chenyiya.com/codepen/day008-btn1.jpg");
+  background-size: cover;
+}
+
+.advanced {
+  background-image: url("https://chenyiya.com/codepen/day008-btn2.jpg");
+  background-size: cover;
+}
+
+.expert {
+  background-image: url("https://chenyiya.com/codepen/day008-btn3.jpg");
+  background-size: cover;
+}
+
+#bottom {
+  width: 740px;
+  height: 60px;
+  background: linear-gradient(155deg, transparent 14%, #E1F1C8 35%, #C4F27F 70%, #BFF373 94%, #BFF372 100%);
+  position: absolute;
+  bottom: 0;
+  padding-right: 40px;
+}
+
+#bottom h4 {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #6F903E;
+  float: right;
+  line-height: 60px;
+  transition: all 0.5s;
+}
+
+#bottom h4:hover {
+  color: #28202a;
+  cursor: pointer;
+}
+
+#container p {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #7A7A7A;
+}

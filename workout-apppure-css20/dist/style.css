@@ -1,0 +1,307 @@
+/* Please ❤ this if you like it! */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1.7;
+	background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  height: 30px;
+}
+h6{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0;
+}
+.section-fluid-main{
+  position: relative;
+  display: block;
+  width: calc(100% - 40px);
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1100px;
+  padding-top: 50px;
+  padding-bottom: 90px;
+  -ms-flex-item-align: center;
+  align-self: center;
+  z-index: 3;
+}
+.section-row{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.section-col-1{
+  position: relative;
+  width: 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 15px;
+}
+.section{
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+.section-svg-wrap{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+}
+.section-svg-wrap svg{
+  width: 100%;
+  height: auto;
+  display: block;
+  stroke-width: 5px;
+  stroke: #101f55;
+  filter: drop-shadow(6px 6px 8px rgba(16, 31, 85,.8));
+}
+.section-svg-wrap svg.svg-path{
+  stroke-dashoffset: 0;
+  stroke-dasharray: 3715;
+  transition: stroke-dashoffset 600ms 500ms linear;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+  position: absolute;
+  visibility: hidden;
+}
+
+.goal-btn:checked + label,
+.goal-btn:not(:checked) + label{
+  position: relative;
+  width: 100%;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  margin: 5px 6px;
+  padding: 12px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: 4px;
+  background-color: #101e54;
+  color: #ffeba7;
+  cursor: pointer;
+  transition: all 250ms linear;
+}
+.goal-btn:checked + label{
+  background-color: #ffeba7;
+  color: #101e54;
+}
+#goal-1:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 3200;
+  stroke-dasharray: 3715;
+}
+#goal-2:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 2600;
+  stroke-dasharray: 3715;
+}
+#goal-3:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 2000;
+  stroke-dasharray: 3715;
+}
+#goal-4:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 1400;
+  stroke-dasharray: 3715;
+}
+#goal-5:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 700;
+  stroke-dasharray: 3715;
+}
+#goal-6:checked ~ .section-col-1 .section-svg-wrap svg.svg-path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 3715;
+}
+.tooltip{
+  position: absolute;
+  display: block;
+  z-index: 100;
+  min-width: 160px;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #1a3489;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 12px 35px 0 rgba(16, 31, 85, 0.35);
+  transform: translateX(-50%) rotate(-15deg); 
+  transform-origin: center top;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+.tooltip:after{
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  z-index: -1;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid #1a3489;
+  transition: border-bottom 200ms 100ms ease;
+}
+.tooltip .bx{
+  margin: 0;
+  width: auto;
+  font-size: 20px;
+  margin-right: 3px;
+  transform: translateY(-1px);
+  color: #ffeba7;
+}
+.tooltip.goal-1{
+  top: 57%;
+  left: 34.5%;
+}
+.tooltip.goal-2{
+  top: 58.5%;
+  left: 38.5%;
+}
+.tooltip.goal-3{
+  top: 49.8%;
+  left: 63.7%;
+}
+.tooltip.goal-4{
+  top: 19%;
+  left: 84%;
+}
+.tooltip.goal-5{
+  top: 30.3%;
+  left: 59%;
+}
+.tooltip.goal-6{
+  top: 17%;
+  left: 24.9%;
+}
+#goal-1:checked ~ .section-col-1 .tooltip.goal-1,
+#goal-2:checked ~ .section-col-1 .tooltip.goal-2,
+#goal-3:checked ~ .section-col-1 .tooltip.goal-3,
+#goal-4:checked ~ .section-col-1 .tooltip.goal-4,
+#goal-5:checked ~ .section-col-1 .tooltip.goal-5,
+#goal-6:checked ~ .section-col-1 .tooltip.goal-6 {
+  transform: translateX(-50%) rotate(0); 
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 350ms 1300ms ease, transform 350ms 1300ms ease;
+}
+
+
+.logo {
+	position: fixed;
+	top: 25px;
+	left: 25px;
+	display: block;
+	z-index: 1000;
+	transition: all 250ms linear;
+}
+.logo img {
+	height: 26px;
+	width: auto;
+	display: block;
+	transition: filter 250ms linear;
+}
+
+
+@media (max-width: 680px) {
+  .goal-btn:checked + label,
+  .goal-btn:not(:checked) + label{
+    width: 100%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    text-align: center;
+  }
+  .section-svg-wrap svg{
+    stroke-width: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .goal-btn:checked + label,
+  .goal-btn:not(:checked) + label{
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+  }
+  .tooltip.goal-1,
+  .tooltip.goal-2,
+  .tooltip.goal-3,
+  .tooltip.goal-4,
+  .tooltip.goal-5,
+  .tooltip.goal-6{
+    top: auto;
+    left: 50%;
+    bottom: -45px;
+  }
+  .tooltip:after{
+    display: none;
+  }
+  .tooltip{
+    transform: translate(-50%, 10px) rotate(0); 
+  }
+  #goal-1:checked ~ .section-col-1 .tooltip.goal-1,
+  #goal-2:checked ~ .section-col-1 .tooltip.goal-2,
+  #goal-3:checked ~ .section-col-1 .tooltip.goal-3,
+  #goal-4:checked ~ .section-col-1 .tooltip.goal-4,
+  #goal-5:checked ~ .section-col-1 .tooltip.goal-5,
+  #goal-6:checked ~ .section-col-1 .tooltip.goal-6 {
+    transform: translate(-50%, 0) rotate(0); 
+  }
+}

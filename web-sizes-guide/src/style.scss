@@ -1,0 +1,120 @@
+@import "compass/css3";
+
+.row{
+  margin:0;
+  &#final{
+    padding-bottom:50px;
+  }
+}
+html{
+  font-size:62.5%;
+}
+$title:rgba(255,255,255,0.9);
+$font:rgba(255,255,255,0.6);
+body{
+  color:white;
+  font-family:Raleway, sans serif;
+  font-weight:200;
+  @include background-image(radial-gradient(at 50% 100%, #1E5799, #181848));
+}
+.title {
+  color: $title;
+  font-size: 5rem;
+  text-align:center;
+  margin: 10px 0 0 0;
+  +p{
+    color: $title;
+    width:90%;
+    margin: 0 auto;
+    text-align:center;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+}
+.thanks{
+  width:60%;
+  font-size: 3rem;
+  text-align:center;
+  margin: 0 auto 60px auto;
+}
+.box {
+  @include border-radius(10px);
+  //Default width and height
+  display:inline-block;
+  width:50px;
+  height:50px;
+  background: black;
+  left:50%;
+  margin-top:20px;
+  position:relative;
+  @include transform(translate3d(-50%,0,0));
+  font-size: 30px;
+  &:hover > span{
+    color:white;
+  }
+  &:hover + .text{
+    color: white;
+  }
+  > span{
+    display:inline-block;
+    left:50%;
+    top:50%;
+    color: $font;
+    position:relative;
+    @include transform(translate3d(-50%,-50%,0));
+  }
+}
+.text{
+  text-align:center;
+  font-size: 1.4rem;
+  color: $font;
+  margin-top:10px;
+}
+#percentage{
+  width:50%;
+  position: relative;
+}
+#vw {
+  width:5vw;
+  height:5vw;
+}
+#vh{
+  width:15vh;
+  height:15vh;
+}
+#inch {
+  width:1in;
+  height: 1in;
+}
+#cm {
+  width: 3cm;
+  height: 3cm;
+}
+#mm {
+  width: 30mm;
+  height: 30mm;
+}
+#em {
+  width: 3em;
+  height: 3em;
+}
+#rem {
+  width:6rem;
+  height: 6rem;
+}
+#ex{
+  width: 5ex;
+  height: 5ex;
+}
+#pt{
+  width:50pt;
+  height:50pt;
+}
+#pc{
+  width:5pc;
+  height: 5pc;
+}
+#px {
+  width:65px;
+  height:65px;
+}

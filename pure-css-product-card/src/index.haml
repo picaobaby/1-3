@@ -1,0 +1,27 @@
+#wrap
+ %input.initial{:type => "checkbox"}/
+ %input.wheel1{:name => "wheel", :type => "radio"}/
+ %input.wheel2{:name => "wheel", :type => "radio"}/
+ %input.wheel3{:name => "wheel", :type => "radio"}/
+ %input.wheel4{:name => "wheel", :type => "radio"}/
+ %input.buy{:type => "checkbox"}/
+ %h1 Configure the Bike
+ %h2 Added to Cart
+ %h3 Wheels
+ -4.times do
+  .wheeltoggle
+ .buy
+ .toggle.expand
+  %i.fas.fa-bicycle
+ .toggle
+  %i.fas.fa-bicycle
+ .background
+ .frame
+  .rear
+  .stem
+  .shaft
+  .seat
+  .wheel.one.front
+   .inner
+  .wheel.one.back
+   .inner

@@ -1,0 +1,470 @@
+$colone: #3c4053;
+$coltwo: #f6f6f6;
+$colthr: #bad532;
+$cubic1: cubic-bezier(0.45, 0.1, 0, 0.93);
+$cubic2: cubic-bezier(0.25, 0.1, 0, 2.05);
+
+@mixin fsize($sizeValue: 1.6) {
+  font-size: $sizeValue + rem;
+  font-weight: 300;
+}
+
+%font {
+  font-family: "Lilita One", cursive;
+  @include fsize(1);
+  font-weight: 400;
+  font-style: italic;
+}
+
+%mbm {
+  background-image: linear-gradient(-90deg, $colthr 50%, $coltwo 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(75vh, auto) auto;
+  line-height: 1.15;
+  @extend %font;
+  font-size: 62.5%;
+  background-image: linear-gradient(
+    90deg,
+    lighten($colone, 15%) 50%,
+    $coltwo 50%
+  );
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+
+  &.btn {
+    padding: 0.75em 1.5em;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 200;
+    color: $coltwo;
+    border-radius: 2em;
+    background-color: $colthr;
+    box-shadow: 5px 5px 15px rgba($colone, 0.3);
+    transition: all 0.25s $cubic2;
+
+    &:hover {
+      letter-spacing: 4px;
+    }
+  }
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  
+  // for demo
+  &.fcolumn {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    line-height: 1.5;
+    
+    position: absolute;
+    top: -20%;
+    right: 10px;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid lighten($colone, 55%);
+    border-radius: 0.35em;
+    background-color: $coltwo;
+    box-shadow: 6px -6px $colthr;
+    
+    li {
+      position: relative;
+      padding-left: 1.25em;
+      
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        content:'';
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: $colthr;
+      }
+    }
+    
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  padding: 0 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  @include fsize(1);
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 5em 2em 1em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba($colthr, 0.6);
+    background-image: linear-gradient(90deg, $colone, rgba($colthr, 0.6));
+    color: white;
+    transform: translateX(-50vw);
+    transition: transform 0.5s $cubic1;
+
+    ul {
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+        margin: 0.25em 0;
+        text-transform: uppercase;
+        transition: transform 0.25s $cubic2;
+        @include fsize(2);
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateX(-30px);
+          content: "›";
+          opacity: 0;
+        }
+
+        &.line {
+          width: 5vw;
+          height: 3px;
+          background-color: $coltwo;
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &:hover {
+          transform: translateX(5px);
+
+          &::before {
+            transform: translateX(-20px);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  #navopen {
+    display: none;
+
+    &:checked + label ~ .navigation {
+      transform: none;
+    }
+  }
+
+  label {
+    width: 80px;
+  }
+
+  .ham {
+    position: relative;
+    z-index: 5;
+    width: 80px;
+    cursor: pointer;
+
+    path {
+      fill: none;
+      stroke: white;
+      stroke-width: 5;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+
+      &.top {
+        stroke-dasharray: 40 172;
+      }
+
+      &.middle {
+        stroke-dasharray: 40 111;
+      }
+
+      &.bottom {
+        stroke-dasharray: 40 172;
+      }
+    }
+
+    &.active {
+      path {
+        &.top {
+          stroke-dashoffset: -132px;
+        }
+
+        &.middle {
+          stroke-dashoffset: -71px;
+        }
+
+        &.bottom {
+          stroke-dashoffset: -132px;
+        }
+      }
+    }
+  }
+
+  .logo {
+    text-align: center;
+
+    svg {
+      width: 190px;
+
+      path {
+        fill: $colthr;
+      }
+    }
+  }
+
+  .nav {
+    justify-content: flex-end;
+    z-index: 3;
+
+    li {
+      position: relative;
+      margin: auto 1em;
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 5px;
+        bottom: -5px;
+        z-index: -1;
+        width: 110%;
+        height: 70%;
+        background-color: rgba($colthr, 0.7);
+        transition: all 0.25s $cubic2;
+      }
+
+      a {
+        color: $colone;
+      }
+
+      &:hover {
+        &::after {
+          left: -10%;
+          bottom: -10%;
+          width: 120%;
+          height: 120%;
+        }
+      }
+    }
+  }
+}
+
+main {
+  position: relative;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr minmax(120px, auto);
+  grid-template-rows: 1fr;
+  @include fsize(1);
+
+  .triangle {
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    fill: $colthr;
+  }
+
+  article {
+    position: relative;
+    overflow: hidden;
+    padding-left: 136px;
+
+    .sub {
+      @include fsize(2);
+      color: $colone;
+    }
+
+    .sub,
+    .title {
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .title {
+      @include fsize(5);
+      @extend %mbm;
+
+      span {
+        color: $colthr;
+      }
+    }
+
+    .btn {
+      position: relative;
+      z-index: 2;
+      color: $colone;
+    }
+
+    .slider {
+      position: relative;
+      height: 75vh;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      scroll-snap-type: mandatory;
+      scroll-snap-type: y mandatory;
+      scroll-snap-points-y: repeat(75vh);
+
+      perspective: 1px;
+
+      .slide {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        min-height: 100vh;
+        transform-style: preserve-3d;
+
+        .parallax {
+          position: absolute;
+          z-index: -2;
+          top: 0;
+          bottom: 0;
+
+          img {
+            max-width: 950px;
+          }
+        }
+        &-1 {
+          .sub {
+            color: $coltwo;
+            text-shadow: 2px -1px 6px $colone;
+          }
+          .parallax {
+            transform: translateZ(-1px) scale(1);
+          }
+        }
+        &-4 {
+          .parallax {
+            transform: translateZ(-1px) scale(-1, 1) rotate(35deg);
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    position: relative;
+    margin-left: -18px;
+    background-color: $coltwo;
+    display: flex;
+    align-items: flex-end;
+
+    .nums {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      writing-mode: vertical-lr;
+
+      li {
+        position: relative;
+        margin: 1em;
+        padding: 1em;
+
+        a {
+          font-weight: normal;
+        }
+
+        &:last-child {
+          &::before {
+            position: absolute;
+            content: "";
+            right: 1.55em;
+            bottom: calc(100% - 0.5em);
+            width: 1px;
+            height: 3em;
+            background-color: rgba($colone, 0.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  padding: 0 2em;
+  @include fsize(1);
+
+  .social {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0.5em;
+    }
+  }
+
+  a {
+    color: $coltwo;
+
+    i {
+      opacity: 0;
+      transition: opacity 0.2s $cubic1;
+    }
+
+    &:hover {
+      i {
+        opacity: 1;
+        color: $colthr;
+      }
+    }
+  }
+}

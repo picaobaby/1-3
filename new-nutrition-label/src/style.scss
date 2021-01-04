@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+}
+.nutrition-facts-container {
+    // change this color to apply to entire label
+    color: #444;
+    // change the base font size to globally scale the the nutrition label as a unit. Adjust the width to your needs.
+    font-size: 1vw; //vw units scale with the width of a browser
+    width: 100%;
+    //
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    border: solid currentColor 0.8em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+    .nutrition-facts-title {
+        display: block;
+        font-size: 13.9em;
+        font-weight: 900;
+        line-height: 0.8em;
+    }
+    .nutrition-servings {
+        font-size: 6.5em;
+        line-height: 1.1em;
+    }
+    .nutrition-serving-size {
+        display: table;
+        width: 100%;
+        font-weight: 900;
+        font-size: 7.5em;
+        line-height: 1.1em;
+        span {
+            display: table-cell;
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+    .nutrition-amount-per-serving {
+        font-weight: 700;
+        font-size: 6em;
+    }
+    .nutrition-calories {
+        display: table;
+        width: 100%;
+        font-weight: 900;
+        font-size: 11em;
+        line-height: 0.5em;
+        margin-bottom: .2em;
+        span {
+            display: table-cell;
+            &:last-child {
+                text-align: right;
+                font-size: 1.4em;
+            }
+        }
+    }
+    .nutrition-daily-value {
+        font-size: 5em;
+        text-align: right;
+        display: block;
+        font-weight: 700;
+    }
+    .nutrition-information {
+        width: 100%;
+        font-size: 5.5em;
+        border-collapse: collapse;
+        &.nutrition-vitamins {
+            td,
+            span {
+                font-weight: 400!important;
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    border-top: 0.08em solid currentColor;
+                    &:last-child {
+                        text-align: right;
+                        font-weight: 700;
+                    }
+                }
+                &:first-child {
+                    span {
+                        &:first-child {
+                            font-weight: 700;
+                        }
+                    }
+                }
+                &:not(:first-child) {
+                    td {
+                        padding-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+	
+    .nutrition-disclaimer {
+        font-size: 4.2em;
+        display: table;
+        padding-top: 0.4em;
+        span {
+            &:last-child {
+                display: table-cell;
+            }
+        }
+    }
+    hr {
+        display: block;
+        border: none;
+        border-bottom: solid currentColor 2em;
+    }
+    .hr-light {
+        border-width: 0.5em;
+    }
+    .hr-bold {
+        border-width: 4em;
+    }
+    .indent {
+        padding-left: 2em!important;
+    }
+    .bold {
+        font-weight: 700;
+    }
+}
+.some-other-content {
+    display: inline-block;
+}

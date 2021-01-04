@@ -1,0 +1,145 @@
+$black : #100a09;
+$gray : #d3d0c9;
+$white : #fbfcf7;
+$green : #84E878;
+$red : #ffa6a0;
+$radius : 3px;
+$shadow : 0 1px 2px rgba($black, .15);
+$shadow-hover : 0 2px 3px rgba($black, .3);
+$transition : .25s;
+
+* { margin: 0; padding: 0; border: 0; box-sizing: border-box; }
+
+body {
+	font: bold 18px sans-serif;
+	background: $gray;
+	color: $black;
+}
+
+header { padding: 20px 0; }
+footer { padding: 20px; }
+
+.container { padding: 5px 20px; }
+.controls {
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+input, button { font: inherit; }
+button {
+	padding: 10px;
+	background: white;
+	float: left;
+	border: 0;
+	margin: 2px;
+	cursor: pointer;
+	box-shadow: $shadow;
+	border-radius: $radius;
+	border-width: 5px 0;
+	
+	&:hover {
+		background: white;
+		text-decoration: underline;
+		box-shadow: $shadow-hover;
+	}
+	
+	&:active { 
+		margin: 4px 2px 0;
+	}
+	&:focus { outline: 0; }	
+}
+
+.simulate, .blitz { background: mix($white, $gray); }
+
+
+h1 {
+	font-size: 30px;
+	padding: 2px;
+}
+
+h2 {
+	padding: 0 2px 5px;
+	
+	@media (min-width: 550px) {
+		display: inline-block;
+		width: 140px;
+	}
+	
+	.loser & { color: $gray; }
+}
+
+.simulator {
+	background: $white;
+	box-shadow: $shadow;
+	padding: 20px 0;
+}
+.attackers, .defenders { 
+	transition: opacity .5s;
+}
+
+.output, .square { display: inline-block; }
+.square, label {
+	display: inline-block;
+	line-height: 60px;
+	text-align: center;
+	border: 2px solid;
+	font: bold 25px/60px sans-serif;	
+	margin: 2px;
+	border-radius: 4px;
+	vertical-align: middle;
+	background-color: white;
+}
+
+.square {
+	width: 64px;
+	height: 64px;
+	background: url(https://bennettfeely.com/labs/dice.svg);
+	background-size: 360px 60px;
+	background-color: white;
+}
+
+.win { background-color: $green; }
+.lose { background-color: $red; }
+
+@for $i from 1 through 6 {
+	.roll-#{$i} {
+		background-position: ($i - 1)*-60px 0;
+	}
+}
+
+label {
+	display: inline-block;
+	width: 132px;
+	font-size: 15px;
+	cursor: text;
+	overflow: hidden;
+	
+	.winner & {
+		background: $green;
+	}
+	.loser & {
+		background: $red;
+	}
+	
+	span {
+		display: inline-block;
+		width: 64px;
+		float: left;
+		user-select: none;
+	}
+}
+
+.armies {
+	width: 64px;
+	font-size: 28px;
+	text-align: center;
+	border: 0;
+	vertical-align: top;
+	float: left;
+	background: transparent;
+	border-right: 1px dashed rgba($black, .25);
+	
+	&:focus {
+		outline: 0;
+	}
+}

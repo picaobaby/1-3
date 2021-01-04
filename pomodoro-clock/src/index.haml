@@ -1,0 +1,48 @@
+.container
+  .header
+    %svg#gradient{"style" => "width: auto;"}
+      %defs
+        %linearGradient#linearGradient{ "x1"=>"0%", "y1"=>"0%", "x2"=>"100%", "y2"=>"100%" }
+          %stop{ "offset"=>"0%", "stop-color"=>"#B8D087" }
+          %stop{ "offset"=>"100%", "stop-color" =>"#00996D" }
+      %text{"y"=>"36px", "fill-opacity"=>"1"}
+        Pomodoro Clock
+  .timer
+    .spinner-container
+      .spinner-mask
+      %svg.spinner{"width" => "240px", "height" => "240px", "viewBox" => "0 0 66 66", "xmlns" => "http://www.w3.org/2000/svg"}
+        %circle.path#spineroo{"fill" => "none", "stroke-width" => ".5", "stroke-cap" => "round", "cx" => "33", "cy" => "33", "r" => "30"}
+    .outer-circle
+    .inner-circle
+    .timer-display
+      %svg#gradient
+        %defs
+          %linearGradient#linearGradient{ "x1" => "0%", "y1" => "0%", "x2" => "100%", "y2" => "100%" }
+            %stop{ "offset" => "0%", "stop-color" => "#B8D087" }
+            %stop{ "offset" => "100%", "stop-color" =>"#00996D" }
+        %text#timer-display-time{"y"=>"36px", "fill-opacity"=>"1"}
+          25:00
+  #status
+  #action-title
+    %small SETTINGS
+  .actions
+    .set-timer
+      session length
+      .set-display
+        %span#set-timer-display 25
+        min
+      .minus-add
+        .setting-button#minus-timer -
+        .setting-button#add-timer +
+    .set-break
+      break length
+      .set-display
+        %span#set-break-display 5
+        min
+      .minus-add
+        .setting-button#minus-break -
+        .setting-button#add-break +
+.start#start-timer START
+.start#reset-timer.hidden RESET
+  
+  

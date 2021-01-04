@@ -1,0 +1,42 @@
+.nutrifacts-img {
+  float:left;
+}
+.nutrifacts-img img {
+  width:300px;
+}
+.nutrifacts-html {
+  padding:2px;
+  font-family: "Helvetica";
+  font-size: 12px;
+  float: left;
+  border: 1px solid black;
+  width: 250px;
+  margin-top:2px;
+}
+.nutrifacts-html table {
+  border-collapse: collapse;
+  width:100%;
+}
+.nutrifacts-html td {
+  border-top: 1px solid black;
+}
+.nutrifacts-html h2 {
+  margin:0;
+  font-size:29px;
+}
+.separator {
+  height:9px;
+  background-color: black;
+  margin-top:2px;
+}
+.align-text-right {
+  text-align:right;
+}
+.info {
+  border-top:1px solid black;
+  padding: 2px;
+  font-size:9px;
+}
+/** Gracias 
+Siganme en Twitter @iframe !! :)
+**/

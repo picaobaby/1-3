@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Web Sizes Guide</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:600,400,200' rel='stylesheet'>
+<p class='title'>Web Units Guide</p>
+<p>be sure to resize the browser and see how certain elements change shapes. All of the sizes presented can be used for other properties such as paddings, margins etc... But be careful or you will end up with some unexpected results.</p>
+<div class='separator'></div>
+<div class='row'>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='percentage'>
+      <span>%</span>
+    </div>
+    <div class='text'>% units take a percentage value off their parent element</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='inch'>
+      <span>Inch</span>
+    </div>
+    <div class='text'>inches are fixed units. 1inch = 2.54cm</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='cm'>
+      <span>cm</span>
+    </div>
+    <div class='text'>cm are also fixed units, 1cm = 10mm</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='mm'>
+      <span>mm</span>
+    </div>
+    <div class='text'>you guessed it, milimeters are fixed as well.</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='em'>
+      <span>em</span>
+    </div>
+    <div class='text'>em units are really interesting. They are related to the font size of the parent element. My Box div has a font size property of 30px, so 1em = 30px.</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-2'>
+    <div class='box' id='rem'>
+      <span>rem</span>
+    </div>
+    <div class='text'>rem units are similar to em units, except they are relative to the document root font size.</div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-12 col-sm-6 col-md-3'>
+    <div class='box' id='ex'>
+      <span>ex</span>
+    </div>
+    <div class='text'>1 ex is the x-height of a font (x-height is usually about half the font-size)</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-3'>
+    <div class='box' id='pt'>
+      <span>pt</span>
+    </div>
+    <div class='text'>1pt(point) = 1/72 inch</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-3'>
+    <div class='box' id='pc'>
+      <span>pc</span>
+    </div>
+    <div class='text'>1pc/pica = 12pt</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-3'>
+    <div class='box' id='px'>
+      <span>px</span>
+    </div>
+    <div class='text'>We all know pixels right?</div>
+  </div>
+</div>
+<div class='row' id='final'>
+  <div class='title'>Now this is really cool!</div>
+  <p>vw and vh units are viewport based and will actually scale when you rezise the window. See it for yourself :)!</p>
+  <div class='col-xs-12 col-sm-6 col-md-26'>
+    <div class='box' id='vw'>
+      <span>vw</span>
+    </div>
+    <div class='text'>1vw = 1% width of the viewport. This will actually scale when we resize the window. Cool, huh?</div>
+  </div>
+  <div class='col-xs-12 col-sm-6 col-md-6'>
+    <div class='box' id='vh'>
+      <span>vh</span>
+    </div>
+    <div class='text'>1vh = The same as vw, but it takes 1% of the height of the viewport.</div>
+  </div>
+</div>
+<p class='thanks'>If you liked it, please hit the like button so more people will get to see this. Thanks!</p>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

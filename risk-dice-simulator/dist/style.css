@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 18px sans-serif;
+  background: #d3d0c9;
+  color: #100a09;
+}
+
+header {
+  padding: 20px 0;
+}
+
+footer {
+  padding: 20px;
+}
+
+.container {
+  padding: 5px 20px;
+}
+
+.controls {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+input, button {
+  font: inherit;
+}
+
+button {
+  padding: 10px;
+  background: white;
+  float: left;
+  border: 0;
+  margin: 2px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 10, 9, 0.15);
+  border-radius: 3px;
+  border-width: 5px 0;
+}
+button:hover {
+  background: white;
+  text-decoration: underline;
+  box-shadow: 0 2px 3px rgba(16, 10, 9, 0.3);
+}
+button:active {
+  margin: 4px 2px 0;
+}
+button:focus {
+  outline: 0;
+}
+
+.simulate, .blitz {
+  background: #e7e6e0;
+}
+
+h1 {
+  font-size: 30px;
+  padding: 2px;
+}
+
+h2 {
+  padding: 0 2px 5px;
+}
+@media (min-width: 550px) {
+  h2 {
+    display: inline-block;
+    width: 140px;
+  }
+}
+.loser h2 {
+  color: #d3d0c9;
+}
+
+.simulator {
+  background: #fbfcf7;
+  box-shadow: 0 1px 2px rgba(16, 10, 9, 0.15);
+  padding: 20px 0;
+}
+
+.attackers, .defenders {
+  transition: opacity 0.5s;
+}
+
+.output, .square {
+  display: inline-block;
+}
+
+.square, label {
+  display: inline-block;
+  line-height: 60px;
+  text-align: center;
+  border: 2px solid;
+  font: bold 25px/60px sans-serif;
+  margin: 2px;
+  border-radius: 4px;
+  vertical-align: middle;
+  background-color: white;
+}
+
+.square {
+  width: 64px;
+  height: 64px;
+  background: url(https://bennettfeely.com/labs/dice.svg);
+  background-size: 360px 60px;
+  background-color: white;
+}
+
+.win {
+  background-color: #84E878;
+}
+
+.lose {
+  background-color: #ffa6a0;
+}
+
+.roll-1 {
+  background-position: 0px 0;
+}
+
+.roll-2 {
+  background-position: -60px 0;
+}
+
+.roll-3 {
+  background-position: -120px 0;
+}
+
+.roll-4 {
+  background-position: -180px 0;
+}
+
+.roll-5 {
+  background-position: -240px 0;
+}
+
+.roll-6 {
+  background-position: -300px 0;
+}
+
+label {
+  display: inline-block;
+  width: 132px;
+  font-size: 15px;
+  cursor: text;
+  overflow: hidden;
+}
+.winner label {
+  background: #84E878;
+}
+.loser label {
+  background: #ffa6a0;
+}
+label span {
+  display: inline-block;
+  width: 64px;
+  float: left;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.armies {
+  width: 64px;
+  font-size: 28px;
+  text-align: center;
+  border: 0;
+  vertical-align: top;
+  float: left;
+  background: transparent;
+  border-right: 1px dashed rgba(16, 10, 9, 0.25);
+}
+.armies:focus {
+  outline: 0;
+}

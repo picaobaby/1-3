@@ -1,0 +1,58 @@
+%link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,400,200")
+%p.title Web Units Guide
+%p be sure to resize the browser and see how certain elements change shapes. All of the sizes presented can be used for other properties such as paddings, margins etc... But be careful or you will end up with some unexpected results.
+.separator
+.row
+  .col-xs-12.col-sm-6.col-md-2
+    .box#percentage
+      %span %
+    .text % units take a percentage value off their parent element
+  .col-xs-12.col-sm-6.col-md-2
+    .box#inch
+      %span Inch
+    .text inches are fixed units. 1inch = 2.54cm
+  .col-xs-12.col-sm-6.col-md-2
+    .box#cm
+      %span cm
+    .text cm are also fixed units, 1cm = 10mm
+  .col-xs-12.col-sm-6.col-md-2
+    .box#mm
+      %span mm
+    .text you guessed it, milimeters are fixed as well.
+  .col-xs-12.col-sm-6.col-md-2
+    .box#em
+      %span em
+    .text em units are really interesting. They are related to the font size of the parent element. My Box div has a font size property of 30px, so 1em = 30px.
+  .col-xs-12.col-sm-6.col-md-2
+    .box#rem
+      %span rem
+    .text rem units are similar to em units, except they are relative to the document root font size.
+.row
+  .col-xs-12.col-sm-6.col-md-3
+    .box#ex
+      %span ex
+    .text 1 ex is the x-height of a font (x-height is usually about half the font-size)
+  .col-xs-12.col-sm-6.col-md-3
+    .box#pt
+      %span pt
+    .text 1pt(point) = 1/72 inch
+  .col-xs-12.col-sm-6.col-md-3
+    .box#pc
+      %span pc
+    .text 1pc/pica = 12pt
+  .col-xs-12.col-sm-6.col-md-3
+    .box#px
+      %span px
+    .text We all know pixels right?
+.row#final
+  .title Now this is really cool!
+  %p vw and vh units are viewport based and will actually scale when you rezise the window. See it for yourself :)!
+  .col-xs-12.col-sm-6.col-md-26
+    .box#vw
+      %span vw
+    .text 1vw = 1% width of the viewport. This will actually scale when we resize the window. Cool, huh?
+  .col-xs-12.col-sm-6.col-md-6
+    .box#vh
+      %span vh
+    .text 1vh = The same as vw, but it takes 1% of the height of the viewport.
+%p.thanks If you liked it, please hit the like button so more people will get to see this. Thanks!

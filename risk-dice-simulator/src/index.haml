@@ -1,0 +1,23 @@
+%header
+	.container
+		%h1 Risk Dice Simulator
+
+		.controls
+			%button.roll Roll dice
+			%button.simulate Simulate battle
+			%button.blitz Blitz mode
+
+.simulator
+	.attackers.container
+		%h2 Attackers 
+		%label
+			%input{ :class => "armies", :value => 20 }
+			%span armies
+		.output
+
+	.defenders.container
+		%h2 Defenders 
+		%label
+			%input{ :class => "armies", :value => 14 }
+			%span armies
+		.output

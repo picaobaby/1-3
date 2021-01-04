@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Risk Dice Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+  <div class='container'>
+    <h1>Risk Dice Simulator</h1>
+    <div class='controls'>
+      <button class='roll'>Roll dice</button>
+      <button class='simulate'>Simulate battle</button>
+      <button class='blitz'>Blitz mode</button>
+    </div>
+  </div>
+</header>
+<div class='simulator'>
+  <div class='attackers container'>
+    <h2>Attackers</h2>
+    <label>
+      <input class='armies' value='20'>
+      <span>armies</span>
+    </label>
+    <div class='output'></div>
+  </div>
+  <div class='defenders container'>
+    <h2>Defenders</h2>
+    <label>
+      <input class='armies' value='14'>
+      <span>armies</span>
+    </label>
+    <div class='output'></div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
